@@ -2,57 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* SIGER Dashboard Design System - Professional Energy Management Interface */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dashboard Background - Dark Professional */
+    --background: 210 24% 6%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card System */
+    --card: 210 24% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover */
+    --popover: 210 24% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Energy Status Colors */
+    --energy-ok: 142 76% 36%;        /* Green - System OK */
+    --energy-ok-foreground: 210 40% 98%;
+    
+    --energy-alert: 43 96% 56%;      /* Orange - Alert */
+    --energy-alert-foreground: 210 24% 6%;
+    
+    --energy-critical: 0 84% 60%;    /* Red - Critical */
+    --energy-critical-foreground: 210 40% 98%;
+
+    /* Primary Brand - Electric Blue */
+    --primary: 217 91% 60%;
     --primary-foreground: 210 40% 98%;
+    --primary-glow: 217 91% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Subtle Gray */
+    --secondary: 210 20% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted */
+    --muted: 210 20% 10%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Electric Blue Variant */
+    --accent: 210 20% 12%;
+    --accent-foreground: 217 91% 60%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders */
+    --border: 210 20% 15%;
+    --input: 210 20% 12%;
+    --ring: 217 91% 60%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Sidebar - Dashboard Navigation */
+    --sidebar-background: 210 24% 5%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 20% 10%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 210 20% 12%;
+    --sidebar-ring: 217 91% 60%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Dashboard Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-energy-ok: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-energy-alert: linear-gradient(135deg, hsl(43 96% 56%), hsl(43 96% 66%));
+    --gradient-energy-critical: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 84% 70%));
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Dashboard Effects */
+    --shadow-energy: 0 8px 32px -8px hsl(217 91% 60% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(210 24% 4% / 0.4);
+    --glow-primary: 0 0 40px hsl(217 91% 60% / 0.4);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
   .dark {

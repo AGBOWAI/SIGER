@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -51,6 +52,15 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				// Energy Status Colors
+				energy: {
+					ok: 'hsl(var(--energy-ok))',
+					'ok-foreground': 'hsl(var(--energy-ok-foreground))',
+					alert: 'hsl(var(--energy-alert))',
+					'alert-foreground': 'hsl(var(--energy-alert-foreground))',
+					critical: 'hsl(var(--energy-critical))',
+					'critical-foreground': 'hsl(var(--energy-critical-foreground))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -84,11 +94,44 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'energy-pulse': {
+					'0%, 100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					},
+					'50%': {
+						transform: 'scale(1.05)',
+						opacity: '0.8'
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'energy-pulse': 'energy-pulse 2s ease-in-out infinite',
+				'fade-in': 'fade-in 0.5s ease-out'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-energy-ok': 'var(--gradient-energy-ok)',
+				'gradient-energy-alert': 'var(--gradient-energy-alert)',
+				'gradient-energy-critical': 'var(--gradient-energy-critical)'
+			},
+			boxShadow: {
+				'energy': 'var(--shadow-energy)',
+				'card': 'var(--shadow-card)',
+				'glow': 'var(--glow-primary)'
 			}
 		}
 	},
